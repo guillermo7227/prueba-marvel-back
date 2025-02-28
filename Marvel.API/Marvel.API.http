@@ -1,0 +1,53 @@
+@host = http://localhost:5048
+
+POST {{host}}/api/auth/login/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "guille@gmail.com",
+    "password": "12345"
+}
+
+###
+
+POST {{host}}/api/auth/register/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nombre": "Guillermo Agudelo",
+    "identificacion": "1122334455",
+    "email": "guille9@gmail.com",
+    "password": "12345",
+    "confirmarPassword": "12345"
+}
+
+###
+
+GET {{host}}/api/comic
+
+
+###
+
+GET {{host}}/api/favorite?email=guille1@gmail.com
+
+###
+
+POST {{host}}/api/favorite
+Content-Type: application/json
+
+{
+    "email": "guille1@gmail.com",
+    "comicId": 2088
+}
+
+###
+
+DELETE {{host}}/api/favorite
+Content-Type: application/json
+
+{
+    "email": "guille1@gmail.com",
+    "comicId": 331
+}
