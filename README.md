@@ -1,8 +1,24 @@
 # Back End Prueba Marvel
 
-Este proyecto requiere datos secretos para correr localmente. Se deben crear variables de entorno con la utilidad de `dotnet user-secrets` para todas entradas que están vacías en el `appsettings.json`.
+Este proyecto requiere datos secretos para correr localmente. Es necesario crear variables de entorno con la utilidad de `dotnet user-secrets` para todas entradas que están vacías en el `appsettings.json`.
 
-**NOTA: La primera petición a la base de datos de Azure tardará unos minutos debido a está "despertando". Esto debido a ser una base de datos de capa gratuita.**
+A continuación están los comandos para crear estas variables desde la carpeta raíz de la solución.
+
+```
+dotnet user-secrets init --project Marvel.Api                                                                                    
+dotnet user-secrets set "Jwt:Key" "super-secret-key-super-secret-key" --project Marvel.API                    
+dotnet user-secrets set "MarvelAPI:PrivateKey" "Mi-Key-Privada-Marvel" --project Marvel.API          
+dotnet user-secrets set "MarvelAPI:PublicKey" "Mi-Key-Publica-Marvel" --project Marvel.API
+dotnet user-secrets set "DbInfo:DbHost" "Server=tcp:apps-db-server-gjaa.database.windows.net,1433;" --project Marvel.API
+dotnet user-secrets set "DbInfo:DbDatabase" "Initial Catalog=marveldb;" --project Marvel.API
+dotnet user-secrets set "DbInfo:DbUsername" "User ID=pruebamarvel;" --project Marvel.API
+dotnet user-secrets set "DbInfo:DbPassword" "Password=1231#ASDFa;" --project marvel.api    
+```
+
+Para correr el proyecto:
+
+`dotnet run --project Marvel.Api` 
+
 
 Guillermo Agudelo - 2025
 

@@ -17,7 +17,7 @@ public static class DependencyInjection
 {
     public static void AddInfraestructure(this IServiceCollection services, IConfiguration configuration)
     {
-        var dbSettings = configuration.GetSection("DbInfo").Get<DbInfoSettings>();
+        var dbSettings = configuration.GetSection("DbInfo").Get<DbInfoSettings>()!;
 
         var connectionString = $"{configuration.GetConnectionString("SqlServerConnection")}{dbSettings.DbHost}{dbSettings.DbDatabase}{dbSettings.DbUsername}{dbSettings.DbPassword}";
 
