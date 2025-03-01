@@ -12,7 +12,7 @@ dotnet user-secrets set "MarvelAPI:PublicKey" "Mi-Key-Publica-Marvel" --project 
 dotnet user-secrets set "DbInfo:DbHost" "Server=tcp:apps-db-server-gjaa.database.windows.net,1433;" --project Marvel.API
 dotnet user-secrets set "DbInfo:DbDatabase" "Initial Catalog=marveldb;" --project Marvel.API
 dotnet user-secrets set "DbInfo:DbUsername" "User ID={{usuario-enviado-en-email}};" --project Marvel.API
-dotnet user-secrets set "DbInfo:DbPassword" "Password={{contrase-enviada-en-email}};" --project marvel.api    
+dotnet user-secrets set "DbInfo:DbPassword" "Password={{contraseña-enviada-en-email}};" --project marvel.api    
 ```
 
 Para correr el proyecto:
